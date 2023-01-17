@@ -36,7 +36,7 @@ jQuery('a[href^="#"]').on('click', function() {
 
 //googleform
 let $form = $( '#js-form' )
-$form.submit(function(e) {
+$form.submit(function (e) {
   $.ajax({
    url: $form.attr('action'),
    data: $form.serialize(),
@@ -45,10 +45,28 @@ $form.submit(function(e) {
    statusCode: {
       0: function() {
         //送信に成功したときの処理
+        $form.slideUp()
+        $( '#js-success' ).slideDown()
       },
       200: function() {
         //送信に失敗したときの処理
+        $form.slideUp()
+        $( '#js-error' ).slideDown()
       }
     }
   });
+  return false;
+});
+
+let $submit = $( '#js-submit' )
+$( '#js-form input, #js-form textarea' ).on( 'change', function() {
+  if(
+    $( '#js-form input[type="text"]' ).val() !== "" &&
+    $( '#js-form input[type="email"]' ).val() !== "" &&
+    $( '#js-form input[name="entry.1595573110"]' ).prop( 'checked' ) === true
+  ) {
+    $submit.addClass( '-active' )
+  }  else {
+    $submit.removeClass( '-active' )
+  }
 });
