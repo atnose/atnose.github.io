@@ -229,43 +229,51 @@
       <h2 class="section_title contact_title">
         Contact
       </h2>
-      <div class="contact_attention">
-        <span class="contact_attention-mark">＊</span>は入力必須項目です
-      </div>
       <div class="contact_form">
         <form id="js-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd_28nCRuqGY2i9ZQ2vkdxCMBt3Y6Bo7AIHTPFyqyET2dfS4A/formResponse" class="form_group" method="post">
-          <dl class="form_group-row">
-            <dt class="form_group-label"><label for="your-name" class="is-required">お名前<span class="form_group-label-inline">＊</span></label></dt>
-            <dd class="form_group-input"><input id="your-name" type="text" name="entry.120470437"></dd>
-          </dl>
-          <dl class="form_group-row">
-            <dt class="form_group-label"><label for="your-email" class="is-required">メールアドレス<span class="form_group-label-inline">＊</span></label></dt>
-            <dd class="form_group-input"><input id="your-email" type="email" name="emailAddress"></dd>
-          </dl>
-          <dl class="form_group-row">
-            <dt class="form_group-label">法人/個人の選択<span class="form_group-label-inline">＊</span></dt>
-            <dd class="radio">
-              <div class="radio_input-wrap">
-                <input name="entry.1737536661" type="radio" class="radio_input-item" id="your-kind" value="法人" checked>
-                <label for="your-kind" class="radio_input-btn">法人</label>
-              </div>
-              <div class="radio_input-wrap">
-                <input name="entry.1737536661" type="radio" class="radio_input-item" id="your-kind2" value="個人">
-                <label for="your-kind2" class="radio_input-btn">個人</label>
-              </div>
-            </dd>
-          </dl>
-          <dl class="form_group-row">
-            <dt class="form_group-label"><label for="your-message">お問い合わせ内容<span class="form_group-label-inline">✳︎</span></label></dt>
-            <dd class="form_group-input">
-              <textarea name="your-message" id="your-message"></textarea>
-            </dd>
-          </dl>
-          <div class="form_check">
-            <label><input name="entry.1595573110" type="checkbox" value="プライバシーポリシーの同意"><span><a href="">プライバシーポリシー</a>に同意します。</span></label>
+          <div class="contact_attention">
+            <span class="contact_attention-mark">＊</span>は入力必須項目です
           </div>
-          <button type="submit" class="btn contact_btn">送信</button>
+          <dl class="form_group-row">
+            <div class="contact_item">
+              <dt class="form_group-label"><label for="your-name" class="is-required">お名前<span class="form_group-label-inline">＊</span></label></dt>
+              <dd class="form_group-input"><input id="your-name" type="text" name="entry.120470437" required></dd>
+            </div>
+            <div class="contact_item">
+              <dt class="form_group-label"><label for="your-email" class="is-required">メールアドレス<span class="form_group-label-inline">＊</span></label></dt>
+              <dd class="form_group-input"><input id="your-email" type="email" name="emailAddress" required></dd>
+            </div>
+            <div class="contact_item">
+              <dt class="form_group-label">法人/個人の選択<span class="form_group-label-inline">＊</span></dt>
+              <dd class="radio">
+                <div class="radio_input-wrap">
+                  <input name="entry.1737536661" type="radio" class="radio_input-item" id="your-kind" value="法人" checked required>
+                  <label for="your-kind" class="radio_input-btn">法人</label>
+                </div>
+                <div class="radio_input-wrap">
+                  <input name="entry.1737536661" type="radio" class="radio_input-item" id="your-kind2" value="個人" required>
+                  <label for="your-kind2" class="radio_input-btn">個人</label>
+                </div>
+              </dd>
+            </div>
+            <div class="contact_item">
+              <dt class="form_group-label"><label for="your-message">お問い合わせ内容<span class="form_group-label-inline">✳︎</span></label></dt>
+              <dd class="form_group-input">
+                <textarea name="entry.696537832" id="your-message" value="お問い合わせ内容" required></textarea>
+              </dd>
+            </div>
+            <div class="form_check">
+              <label><input name="entry.1595573110" type="checkbox" value="プライバシーポリシーの同意" required><span><a href="">プライバシーポリシー</a>に同意します。</span></label>
+            </div>
+            <button id="js-submit" type="submit" class="btn contact_btn">送信</button>
+          </dl>
         </form>
+        <div id="js-success" class="contact-message">
+          <p>送信完了しました。ありがとうございました</p>
+        </div>
+        <div id="js-error" class="contact-message error">
+          <p>送信に失敗しました。ページを更新して再度送信してください。</p>
+        </div>
       </div>
     </div>
   </section>
