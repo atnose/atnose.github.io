@@ -136,7 +136,7 @@ header {
   }
 }
 .drawer_icon.is_active {
-  transform: translateX(-280px);
+  transform: translateX(-290px);
 }
 .drawer_icon.is_active .drawer_icon-bar1 {
   transform: rotate(-45deg);
